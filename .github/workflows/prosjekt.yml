@@ -29,5 +29,4 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: |
-        cd src/test/java
         mvn --batch-mode --update-snapshots verify
