@@ -18,31 +18,41 @@ public class AuthService {
         this.loadUsers();
     }
 
-    // Register a user with validation
+    // Register a user with validation and log response time
     public boolean registerUser(String username, String password) {
+        long startTime = System.nanoTime();
+
         if (!isValidUsername(username) || !isValidPassword(password)) {
             return false;
         }
         if (this.users.containsKey(username)) {
             System.out.println("User already exists.");
+            logResponseTime("registerUser", startTime);
             return false;
         }
         this.users.put(username, password);
         System.out.println("Registration successful.");
         this.saveUsers();
+
+        logResponseTime("registerUser", startTime);
         return true;
     }
 
-    // Login a user with validation
+    // Login a user with validation and log response time
     public boolean loginUser(String username, String password) {
+        long startTime = System.nanoTime();
+
         if (!isValidUsername(username) || !isValidPassword(password)) {
+            logResponseTime("loginUser", startTime);
             return false;
         }
         if (this.users.containsKey(username) && this.users.get(username).equals(password)) {
             System.out.println("Login successful.");
+            logResponseTime("loginUser", startTime);
             return true;
         } else {
             System.out.println("Invalid username or password.");
+            logResponseTime("loginUser", startTime);
             return false;
         }
     }
@@ -91,5 +101,12 @@ public class AuthService {
             return false;
         }
         return true;
+    }
+
+    // Log response time for methods
+    private void logResponseTime(String methodName, long startTime) {
+        long endTime = System.nanoTime();
+        long duration = endTime - startTime;
+        System.out.println("Execution time for " + methodName + " (ns): " + duration);
     }
 }

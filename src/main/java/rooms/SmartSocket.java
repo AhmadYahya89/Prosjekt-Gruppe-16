@@ -7,9 +7,13 @@ public class SmartSocket {
     private boolean statusOn;
 
     public SmartSocket(int number, String name) {
+        long startTime = System.nanoTime();
+
         setNumber(number); // Use setNumber to ensure validation
         setName(name); // Use setName to ensure validation
         this.statusOn = false;
+
+        logResponseTime("SmartSocket Constructor", startTime);
     }
 
     public int getNumber() {
@@ -45,15 +49,30 @@ public class SmartSocket {
     }
 
     public void setStatusOn(boolean statusOn) {
+        long startTime = System.nanoTime();
+
         this.statusOn = statusOn;
+
+        logResponseTime("setStatusOn", startTime);
     }
 
     public void toggleSmartSocketState() {
+        long startTime = System.nanoTime();
+
         this.statusOn = !this.statusOn;
+
+        logResponseTime("toggleSmartSocketState", startTime);
     }
 
     // Validate socket number to ensure it is a positive integer
     private boolean isValidNumber(int number) {
         return number > 0;
+    }
+
+    // Log response time for methods
+    private void logResponseTime(String methodName, long startTime) {
+        long endTime = System.nanoTime();
+        long duration = endTime - startTime;
+        System.out.println("Execution time for " + methodName + " (ns): " + duration);
     }
 }
