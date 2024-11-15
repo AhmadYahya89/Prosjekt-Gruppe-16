@@ -23,12 +23,14 @@ class RoomTest {
 
     @Test
     void testAddSocket() {
+        //Krav: Teste at en SmartSocket kan legges til i et rom
         room.addSocket(socket);
         assertTrue(room.getSockets().contains(socket), "Socket should be added to the room");
     }
 
     @Test
     void testRemoveSocket() {
+        //Krav: Teste at en SmartSocket kan fjernes fra et rom
         room.addSocket(socket);
         room.removeSocket(socket);
         assertFalse(room.getSockets().contains(socket), "Socket should be removed from the room");
@@ -36,6 +38,7 @@ class RoomTest {
 
     @Test
     void testRoomNameNotEmpty() {
+        //Krav: Rommnavn kan ikke være tomt
         assertThrows(IllegalArgumentException.class, () -> new Room(""), "rooms.Room name cannot be empty");
     }
 

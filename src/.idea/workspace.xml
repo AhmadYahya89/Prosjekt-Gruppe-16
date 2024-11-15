@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="60a6d8c5-9650-40be-b010-5b7a5a6a899e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/java/tests/RoomTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/java/tests/RoomTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/java/tests/SmartSocketTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/java/tests/SmartSocketTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,9 +17,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2nqSTnJh5wrhVW9u2wDJ9T6qOuR" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -30,6 +35,10 @@
     "git-widget-placeholder": "Develop",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/alexg/Documents/GitHub/Prosjekt-Gruppe-16",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -51,6 +60,8 @@
       <option name="presentableId" value="Default" />
       <updated>1729699122144</updated>
       <workItem from="1729699123164" duration="232000" />
+      <workItem from="1731681327906" duration="38000" />
+      <workItem from="1731681919580" duration="369000" />
     </task>
     <servers />
   </component>
