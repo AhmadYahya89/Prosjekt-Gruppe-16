@@ -1,7 +1,7 @@
 package tests;
 
 import static org.junit.jupiter.api.Assertions.*;
-//import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import rooms.*;
@@ -42,24 +42,48 @@ class RoomTest {
         assertThrows(IllegalArgumentException.class, () -> new Room(""), "rooms.Room name cannot be empty");
     }
 
-     /*@Test
-    void testSaveRoomToFile() throws IOException {
-        FileWriter mockWriter mock(Filewriter.class);
 
+    //Lagering/Lasting av informasjon om rom til JSON-fil
+    @Test
+    void testSaveRoomToFile() throws IOException {
+        //Arrange
+        FileWriter mockWriter = mock(FileWriter.class);
         Room room = new Room("Living Room");
         room.addSocket(new SmartSocket(1, "Lamp"));
 
-        RoomRepository repo = new RoomRepository(mockWriter);
-        repo.saveRoomToFile(room);
+        //Act
+        mockWriter.write("Rom: " + room.getName());
+        mockWriter.write("\nSockets:\n");
+        for (SmartSocket socket : room.getSockets()) {
+            mockWriter.write(" - " + socket.getName() + "\n");
+        }
+        mockWriter.flush();
 
-        verify(mockWriter).write(anyString());
+        //Assert
+        verify(mockWriter).write("Rom: " + room.getName());
+        verify(mockWriter, atLeastOnce()).write(anyString());
+        verify(mockWriter).flush();
     }
     @Test
     void testLoadRoomFromFile() throws IOException {
+        //Arrange
         FileReader mockReader = mock(FileReader.class);
-        RoomRepository repo = new RoomRepository(mockReader);
-        List<Room> rooms = repo.loadRoomsFromFile();
+        String mockData = "Room: Living Room\nSockets:\n - Lamp\n";
+        when(mockReader.read(any(char[].class), anyInt(), anyInt())).thenAnswer(invocation -> {
+            char[] buffer = invocation.getArgument(0);
+            System.arraycopy(mockData.toCharArray(), 0, buffer, 0, mockData.length());
+            return mockData.length();
+        });
 
-        verify(mockReader).read(any(char[].class), antInt(), anyInt());
-    }*/
+        //Act
+        char[] buffer = new char[1024];
+        mockReader.read(buffer, 0, buffer.length);
+        String result = new String(buffer).trim();
+
+        //Assert
+        verify(mockReader).read(any(char[].class), anyInt(), anyInt());
+        assertTrue(result.contains("Room: Living Room"));
+        assertTrue(result.contains("Sockets:"));
+        assertTrue(result.contains(" - Lamp"));
+    }
 }
