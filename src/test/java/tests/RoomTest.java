@@ -43,7 +43,7 @@ class RoomTest {
     }
 
 
-    //Lagering/Lasting av informasjon om rom til JSON-fil
+    //Lagering av informasjon om rom til JSON-fil
     @Test
     void testSaveRoomToFile() throws IOException {
         //Arrange
@@ -64,6 +64,8 @@ class RoomTest {
         verify(mockWriter, atLeastOnce()).write(anyString());
         verify(mockWriter).flush();
     }
+
+    //Lasting av informasjon om rom til JSON-fil
     @Test
     void testLoadRoomFromFile() throws IOException {
         //Arrange
