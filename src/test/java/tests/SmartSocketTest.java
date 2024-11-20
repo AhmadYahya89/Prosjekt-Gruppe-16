@@ -17,7 +17,10 @@ class SmartSocketTest {
     @BeforeEach
     void setUp() {
         socket = new SmartSocket(1, "Heater");
+        room = new Room("Living Room");
+        socket2 = new SmartSocket(2,"Coffee");
     }
+
 
     @Test
     void testToggleState() {
@@ -43,6 +46,19 @@ class SmartSocketTest {
     }
 
     @Test
+    void testNullSocket() {
+        assertThrows(IllegalArgumentException.class,
+                () -> room.addSocket(null),
+                "Socket cannot be null");
+    }
+
+    @Test
+    void testValidSocket() {
+        SmartSocket validSocket = new SmartSocket(1, "Lamp");
+        room.addSocket(validSocket);
+    }
+
+    @Test
     void testDuplicateSocket(){
         //Krav: Teste at et socket ikke kan dupliseres i samme rom
         room.addSocket(socket2);
@@ -53,6 +69,7 @@ class SmartSocketTest {
     @Test
     void testDuplicateSocketName(){
         //Krav: Teste at SmartSocket i samme rom ikke kan ha samme navn
+        SmartSocket socket3 = new SmartSocket(3, "Lamp");
         room.addSocket(socket3);
         SmartSocket duplicateSocketName = new SmartSocket(4, "Lamp");
         assertThrows(IllegalArgumentException.class, () -> room.addSocket(duplicateSocketName),
