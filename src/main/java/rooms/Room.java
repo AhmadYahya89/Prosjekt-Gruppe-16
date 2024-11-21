@@ -25,7 +25,23 @@ public class Room {
     }
 
     public void addSocket(SmartSocket socket) {
-        this.sockets.add(socket);
+        if (socket == null) {
+            throw new IllegalArgumentException("Null socket cannot be added.");
+        }
+
+        if (socket.getName() == null || socket.getName().trim().isEmpty()) {
+            throw new IllegalArgumentException("Socket name cannot be null or empty");
+        }
+
+        if (sockets.contains(socket)) {
+            throw new IllegalArgumentException("Socket cannot be duplicated");
+        }
+        for (SmartSocket existingSocket : sockets){
+            if (existingSocket.getName().equals(socket.getName())) {
+                throw new IllegalArgumentException("Sockets in the same room should not have the same name");
+            }
+        }
+        sockets.add(socket);
     }
 
     public void removeSocket(SmartSocket socket) {
@@ -47,7 +63,7 @@ public class Room {
             System.out.println("Room name must be between 3 and 30 characters.");
             return false;
         }
-        if (!roomName.matches("^[a-zA-Z0-9 ]+$")) {
+        if (!roomName.matches("^[a-zA-Z0-9 .]+$")) {
             System.out.println("Room name can only contain letters, numbers, and spaces.");
             return false;
         }
