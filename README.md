@@ -1,27 +1,32 @@
-Backlog:
--Liste over arbeidsoppgaver(skal være små nok til å utføre i løpet av en sprint):
-Funksjon for brukeren kan opprette rom med navn.
-Knytte stikkontakt til rommet.
-Gi stikkontakt navn.
-Slå stikkontakt av/på.
-Se oversikt/liste over stikkontakter.
-Se oversikt over rom.
-Mulighet til å endre rom eller stikkontakter.
+# Prosjektoversikt
 
--Prosjektdokumentasjon: beskrive kjernesystemet og miljøet rundt det
--dokumenter eksterne avhengigheter 
--Prototype: den skal implementere utvalgte funksjoner i systemet (velge hvilken funksjoner vi skal vise, skal være hovedfunksjoner for å vise omfanget)
--koden av produktet(platform/app for smart-kontroll), 
-I Java:
-Funksjoner: lag rom, gi navn og knytte stikkontakter til rom
-Lister for oversikt over rom og stikkontakter
-Skru av/på input kjører i en for løkke.
+Dette prosjektet er strukturert for å demonstrere applikasjonen, inkludert kildekode, testing, diagrammer og en video som viser sluttresultatet. Nedenfor finner du beskrivelser av hver mappe og hva de inneholder.
 
--automatisierter tester for prototypen
--skrive små “stubs” som tester funksjoner som er avhengig av dem
-Sprint 1 (dets varighet: to uker ±):
-Målet er å lage grunnleggende til at brukeren kunne opprette nytt rom og ny stikkontakter til de rommene. 
-Tasks:
-Lag en modell hvor brukeren kan lage et nytt rom og gi den rommet ett unik navn.
-Vise liste med rommene som er blitt laget.
-Koble koden til Github.
+## Mappestruktur
+
+### src
+- **Kode og Klasser**: Inneholder hele kildekoden, inkludert alle klassene som utgjør kjernen i applikasjonen.
+- **Tester**: Inkluderer alle enhets- og integrasjonstester for å sikre at de forskjellige komponentene fungerer som forventet.
+
+### Diagram
+- **Klassediagram og Flytdiagram**: Inneholder bilder av Klassediagrammet og Flytdiagrammet for å hjelpe med å forstå strukturen og flyten i applikasjonen.
+- **UI-bilder**: Inneholder bilder som illustrerer brukergrensesnittet til applikasjonen, inkludert:
+  - Hjemmeside
+  - Romside
+  - Smart Socket-side
+
+### Video av Resultat
+- **Demo Video**: Denne mappen inneholder en opptaksvideo som demonstrerer applikasjonen i bruk, viser hvordan den fungerer, og beviser at alle funksjonene er riktig implementert og operasjonelle.
+
+## Komme i Gang
+1. **Installasjon**: Klon repositoriet og installer avhengigheter ved å bruke din foretrukne pakkebehandler.
+2. **Kjøring**: Kjr applikasjonen i henhold til instruksjonene gitt i `src`.
+3. **Testing**: Kjr de inkluderte testene for å sikre at alle deler av applikasjonen fungerer korrekt.
+
+Utforsk gjerne diagrammene og demovideoen for å få en bedre forståelse av strukturen og bruken av applikasjonen.
+
+## Hvordan Bruke
+1. Naviger gjennom applikasjonen ved hjelp av UI-sidene vist i de medfølgende bildene.
+2. Se på Klassediagrammet for å forstå forholdene mellom de forskjellige delene av koden.
+3. Se videoen for å se en full demonstrasjon av applikasjonens kapasiteter.
+
