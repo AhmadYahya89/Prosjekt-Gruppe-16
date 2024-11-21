@@ -19,9 +19,9 @@ Dette prosjektet er strukturert for å demonstrere applikasjonen, inkludert kild
 - **Demo Video**: Denne mappen inneholder en opptaksvideo som demonstrerer applikasjonen i bruk, viser hvordan den fungerer, og beviser at alle funksjonene er riktig implementert og operasjonelle.
 
 ## Komme i Gang
-1. **Installasjon**: Klon repositoriet og installer avhengigheter ved å bruke din foretrukne pakkebehandler.
-2. **Kjøring**: Kjr applikasjonen i henhold til instruksjonene gitt i `src`.
-3. **Testing**: Kjr de inkluderte testene for å sikre at alle deler av applikasjonen fungerer korrekt.
+1. **Installasjon**: clon repositoriet og installer avhengigheter ved å bruke din foretrukne pakkebehandler.
+2. **Kjøring**: Kjør applikasjonen i henhold til instruksjonene gitt i `src`.
+3. **Testing**: Kjør de inkluderte testene for å sikre at alle deler av applikasjonen fungerer korrekt.
 
 Utforsk gjerne diagrammene og demovideoen for å få en bedre forståelse av strukturen og bruken av applikasjonen.
 
