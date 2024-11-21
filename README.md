@@ -17,9 +17,12 @@ Dette prosjektet er strukturert for å demonstrere applikasjonen, inkludert kild
 
 ### Video av Resultat
 - **Demo Video**: Denne mappen inneholder en opptaksvideo som demonstrerer applikasjonen i bruk, viser hvordan den fungerer, og beviser at alle funksjonene er riktig implementert og operasjonelle.
-
+  
+## Timeliste
+- Timeliste finnes nederst i PDF fil (Prosjektdokumentasjon) som er levert sammen med zip. fil
+  
 ## Komme i Gang
-1. **Installasjon**: clon repositoriet og installer avhengigheter ved å bruke din foretrukne pakkebehandler.
+1. **Installasjon**: åpne koden ved bruk av ditt foretrukne verktøy.
 2. **Kjøring**: Kjør applikasjonen i henhold til instruksjonene gitt i `src`.
 3. **Testing**: Kjør de inkluderte testene for å sikre at alle deler av applikasjonen fungerer korrekt.
 
@@ -29,4 +32,3 @@ Utforsk gjerne diagrammene og demovideoen for å få en bedre forståelse av str
 1. Naviger gjennom applikasjonen ved hjelp av UI-sidene vist i de medfølgende bildene.
 2. Se på Klassediagrammet for å forstå forholdene mellom de forskjellige delene av koden.
 3. Se videoen for å se en full demonstrasjon av applikasjonens kapasiteter.
-
